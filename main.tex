@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{minted}
+\large
+\title{CS 2160 Assignment 1}
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+    \line(1,0){300}\\
+    [0.65cm]
+	\huge{\bfseries Assignment I}\\
+	\line(1,0){300}\\
+	\textsc{\Large CS 2160 Mon/Wed}\\
+	\textsc{\LARGE \today}\\
+	[5.5cm]     
+	\end{center}
+	\begin{flushright}
+		\textsc{\Large Christopher Horyczun}\\
+		[0.5cm]
+	\end{flushright}
+\end{titlepage}
+
+\section*{Problem 1}
+\begin{minted}[frame=lines, linenos, fontsize=\large] {text}
+1. Intel (R) N200
+
+2. 3.70 GHz
+
+3. 4 Cores
+
+4. 119 gb
+
+5. Windows 11 Home
+\end{minted}
+
+%2.afundamental engineering bottlenecks in computer architecture that limit how fast and efficient modern processors can become
+%2.b abandon raw clock-speed scaling and shift toward multi-core processors, complex cache hierarchies, and specialized hardware accelerators
+
+\section{Problem 2}
+\begin{minted}[frame=lines, linenos, fontsize=\large] {text}
+1. Moore's Law is the observation of the number of transistors on a
+microchip that doubles about every two years while the total cost of
+computers is halved. No Moore's Law doesn't because it's no longer strictly
+valid to the orginial form.
+
+2.  A memory walls and power walls in computer architecture is the
+fundamental engineering bottleneck that limits how fast and effeicent the
+processors become. It affects the computer design by abandoning raw
+clock-speed scaling and shift more towards that of multi-core processors.
+\end{minted}
+
+\section{Problem 3}
+\begin{minted}[frame=lines, linenos, fontsize=\large]
+{Asm}
+slli t0, t3, 2       # t0 = i * 4
+add  t0, a0, t0      # t0 = address of A[i]
+lw   t1, 0(t0)       # t1 = A[i]
+
+slli t2, t4, 2       # t2 = j * 4
+add  t2, a0, t2      # t2 = address of A[j]
+lw   t2, 0(t2)       # t2 = A[j]
+
+add  t1, t1, t2      # t1 = A[i] + A[j]
+
+sw   t1, 20(a1)      # B[5] = result (5 * 4 = 20)
+\end{minted}
+
+\section{Problem 4}
+\begin{minted}[frame=lines, linenos, fontsize=\large]
+{c}
+B[g] = A[f] + A[f + 1];
+\end{minted}
+
+\section{Problem 5}
+\begin{minted}[frame=lines, linenos, fontsize=\large] {text}
+1.0x0100 = 09
+  0x0101 = 4C
+  0x0102 = 01
+  0x0103 = 00
+
+2.0x0100 = 00
+  0x0101 = 01
+  0x0102 = 4C
+  0x0103 = 09
+
+3.0x0100 = 09
+  0x0101 = 4C
+  0x0103 = 00
+
+\end{minted}
+\end{document}
